@@ -1,0 +1,29 @@
+[2025-02-18T17:12:50.881+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-18T17:12:50.904+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.ingest_api manual__2025-02-18T17:12:48.211139+00:00 [queued]>
+[2025-02-18T17:12:50.914+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.ingest_api manual__2025-02-18T17:12:48.211139+00:00 [queued]>
+[2025-02-18T17:12:50.915+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2025-02-18T17:12:50.931+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): ingest_api> on 2025-02-18 17:12:48.211139+00:00
+[2025-02-18T17:12:50.939+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=495) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-18T17:12:50.942+0000] {standard_task_runner.py:72} INFO - Started process 503 to run task
+[2025-02-18T17:12:50.943+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'ingest_api', 'manual__2025-02-18T17:12:48.211139+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmpzybglpof']
+[2025-02-18T17:12:50.944+0000] {standard_task_runner.py:105} INFO - Job 34: Subtask ingest_api
+[2025-02-18T17:12:51.010+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.ingest_api manual__2025-02-18T17:12:48.211139+00:00 [running]> on host 5054b4bca224
+[2025-02-18T17:12:51.100+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='ingest_api' AIRFLOW_CTX_EXECUTION_DATE='2025-02-18T17:12:48.211139+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-18T17:12:48.211139+00:00'
+[2025-02-18T17:12:51.102+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-18T17:12:51.102+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-18T17:12:51.102+0000] {logging_mixin.py:190} INFO - Current task name:ingest_api state:running start_date:2025-02-18 17:12:50.904925+00:00
+[2025-02-18T17:12:51.103+0000] {logging_mixin.py:190} INFO - Dag name:etl_pipeline and current dag run status:running
+[2025-02-18T17:12:51.103+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-18T17:12:51.764+0000] {etl_pipeline.py:50} INFO - API data ingested and saved to /tmp/restcountries.json
+[2025-02-18T17:12:51.768+0000] {python.py:240} INFO - Done. Returned value was: /tmp/restcountries.json
+[2025-02-18T17:12:51.802+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-18T17:12:51.803+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=ingest_api, run_id=manual__2025-02-18T17:12:48.211139+00:00, execution_date=20250218T171248, start_date=20250218T171250, end_date=20250218T171251
+[2025-02-18T17:12:51.814+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-18T17:12:51.814+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-18T17:12:51.814+0000] {logging_mixin.py:190} INFO - Dag name:etl_pipeline queued_at:2025-02-18 17:12:48.221650+00:00
+[2025-02-18T17:12:51.815+0000] {logging_mixin.py:190} INFO - Task hostname:5054b4bca224 operator:PythonOperator
+[2025-02-18T17:12:51.844+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-18T17:12:51.873+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-18T17:12:51.875+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

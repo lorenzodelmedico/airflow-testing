@@ -1,0 +1,29 @@
+[2025-02-19T09:58:29.289+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-19T09:58:29.305+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.ingest_postgres manual__2025-02-19T09:58:26.918142+00:00 [queued]>
+[2025-02-19T09:58:29.312+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.ingest_postgres manual__2025-02-19T09:58:26.918142+00:00 [queued]>
+[2025-02-19T09:58:29.313+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2025-02-19T09:58:29.324+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): ingest_postgres> on 2025-02-19 09:58:26.918142+00:00
+[2025-02-19T09:58:29.333+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'ingest_postgres', 'manual__2025-02-19T09:58:26.918142+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmp0bthzmq7']
+[2025-02-19T09:58:29.332+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=368) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-19T09:58:29.334+0000] {standard_task_runner.py:105} INFO - Job 68: Subtask ingest_postgres
+[2025-02-19T09:58:29.334+0000] {standard_task_runner.py:72} INFO - Started process 372 to run task
+[2025-02-19T09:58:29.389+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.ingest_postgres manual__2025-02-19T09:58:26.918142+00:00 [running]> on host fb45ff33766c
+[2025-02-19T09:58:29.482+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='ingest_postgres' AIRFLOW_CTX_EXECUTION_DATE='2025-02-19T09:58:26.918142+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-19T09:58:26.918142+00:00'
+[2025-02-19T09:58:29.487+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-19T09:58:29.487+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-19T09:58:29.488+0000] {logging_mixin.py:190} INFO - Current task name:ingest_postgres state:running start_date:2025-02-19 09:58:29.305498+00:00
+[2025-02-19T09:58:29.488+0000] {logging_mixin.py:190} INFO - Dag name:etl_pipeline and current dag run status:running
+[2025-02-19T09:58:29.488+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-19T09:58:29.497+0000] {etl_pipeline.py:75} INFO - Postgres data ingested and saved to /tmp/postgres_data.csv
+[2025-02-19T09:58:29.498+0000] {python.py:240} INFO - Done. Returned value was: /tmp/postgres_data.csv
+[2025-02-19T09:58:29.520+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-19T09:58:29.520+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=ingest_postgres, run_id=manual__2025-02-19T09:58:26.918142+00:00, execution_date=20250219T095826, start_date=20250219T095829, end_date=20250219T095829
+[2025-02-19T09:58:29.531+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-19T09:58:29.531+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-19T09:58:29.531+0000] {logging_mixin.py:190} INFO - Dag name:etl_pipeline queued_at:2025-02-19 09:58:26.935372+00:00
+[2025-02-19T09:58:29.531+0000] {logging_mixin.py:190} INFO - Task hostname:fb45ff33766c operator:PythonOperator
+[2025-02-19T09:58:29.551+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-19T09:58:29.575+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-19T09:58:29.577+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

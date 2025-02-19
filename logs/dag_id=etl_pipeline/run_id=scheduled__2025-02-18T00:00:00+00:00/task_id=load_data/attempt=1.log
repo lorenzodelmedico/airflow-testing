@@ -1,0 +1,31 @@
+[2025-02-19T09:38:36.526+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-19T09:38:36.548+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.load_data scheduled__2025-02-18T00:00:00+00:00 [queued]>
+[2025-02-19T09:38:36.557+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.load_data scheduled__2025-02-18T00:00:00+00:00 [queued]>
+[2025-02-19T09:38:36.557+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 3
+[2025-02-19T09:38:36.569+0000] {taskinstance.py:2888} INFO - Executing <Task(BigQueryInsertJobOperator): load_data> on 2025-02-18 00:00:00+00:00
+[2025-02-19T09:38:36.576+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-02-19T09:38:36.577+0000] {standard_task_runner.py:72} INFO - Started process 105 to run task
+[2025-02-19T09:38:36.578+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'load_data', 'scheduled__2025-02-18T00:00:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmps1598i22']
+[2025-02-19T09:38:36.578+0000] {standard_task_runner.py:105} INFO - Job 67: Subtask load_data
+[2025-02-19T09:38:36.620+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.load_data scheduled__2025-02-18T00:00:00+00:00 [running]> on host fb45ff33766c
+[2025-02-19T09:38:36.683+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='your_email@example.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='load_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-18T00:00:00+00:00'
+[2025-02-19T09:38:36.685+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-19T09:38:36.685+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-19T09:38:36.685+0000] {logging_mixin.py:190} INFO - Current task name:load_data state:running start_date:2025-02-19 09:38:36.548584+00:00
+[2025-02-19T09:38:36.685+0000] {logging_mixin.py:190} INFO - Dag name:etl_pipeline and current dag run status:running
+[2025-02-19T09:38:36.685+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2025-02-19T09:38:36.698+0000] {connection.py:277} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2025-02-19T09:38:36.702+0000] {base.py:84} INFO - Retrieving connection 'google_cloud_default'
+[2025-02-19T09:38:36.742+0000] {bigquery.py:2957} INFO - Executing: {'query': {'query': "SELECT 'Data loaded successfully' AS status", 'useLegacySql': False}}'
+[2025-02-19T09:38:36.743+0000] {bigquery.py:1702} INFO - Inserting job ***_etl_pipeline_load_data_2025_02_18T00_00_00_00_00_7420d9f5a106fb929e5bfebdf84864bb
+[2025-02-19T09:38:37.675+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2025-02-19T09:38:37.676+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=load_data, run_id=scheduled__2025-02-18T00:00:00+00:00, execution_date=20250218T000000, start_date=20250219T093836, end_date=20250219T093837
+[2025-02-19T09:38:37.694+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-19T09:38:37.694+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-19T09:38:37.694+0000] {logging_mixin.py:190} INFO - Dag name:etl_pipeline queued_at:2025-02-19 09:38:17.399182+00:00
+[2025-02-19T09:38:37.695+0000] {logging_mixin.py:190} INFO - Task hostname:fb45ff33766c operator:BigQueryInsertJobOperator
+[2025-02-19T09:38:37.719+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-19T09:38:37.735+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-19T09:38:37.791+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
