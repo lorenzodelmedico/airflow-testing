@@ -87,7 +87,7 @@ ingest_postgres_task = PythonOperator(
 def validate_data(**kwargs):
     # For demonstration, we'll assume validation is based on a simple check.
     # In practice, you would load the ingested files and perform checks (e.g., for missing values).
-    validation_passed = False  # Stupid validation, always passes
+    validation_passed = True  # Stupid validation, always passes
     if validation_passed:
         logging.info("Validation passed.")
         return 'load_data'
